@@ -23,7 +23,7 @@ myApp.controller('mainController', ['$scope', '$log', '$filter', function($scope
 
 
     // Using $filter
-    $scope.name = 'John';
+    $scope.name = 'Adam';
     $scope.formattedname = $filter('uppercase')($scope.name);
     $log.log($scope.name);
     $log.log($scope.formattedname);
