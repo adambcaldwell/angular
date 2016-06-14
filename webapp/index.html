@@ -16,6 +16,9 @@
     <!-- load angular via CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+    <!-- Adding messages & resources service -->
+    <script src="https://code.angularjs.org/1.5.6/angular-messages.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.6/angular-resource.min.js"></script>
     <script src="js/app.js"></script>
 </head>
 <body>
@@ -24,7 +27,7 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">AngularJS</a>
+                <a class="navbar-brand" href="https://code.angularjs.org/1.5.6">AngularJS</a>
             </div>
 
             <ul class="nav navbar-nav navbar-right">
@@ -39,6 +42,19 @@
     <div ng-controller="mainController">
 
         <h1>Hello world!</h1>
+
+        <!-- Testing the messages module -->
+        <form name="myForm">
+            <label>
+                Enter text:
+                <input type="email" ng-model="field" name="myField" required maxlength="15"/>
+            </label>
+            <div ng-messages="myForm.myField.$error" role="alert">
+                <div class="alert alert-warning" ng-message="required">Please enter a value for this field.</div>
+                <div class="alert alert-danger" ng-message="email">This field must be a valid email address.</div>
+                <div class="alert alert-danger" ng-message="maxlength">This field can be at most 15 characters long.</div>
+            </div>
+        </form>
 
     </div>
 
