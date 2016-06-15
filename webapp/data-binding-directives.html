@@ -45,10 +45,40 @@ ng-model
 
 
         <div>
-            <label>What is your twitter handle?</label>
-            <input type="text" ng-model="handle">
+            <label>What is your twitter handle?
+                <input type="text" ng-model="handle">
+            </label>
         </div>
+
+        <!-- ng-if example -->
+        <!--<div class="alert" ng-if="handle.length !== characters">-->
+            <!--Must be 5 Characters!-->
+        <!--</div>-->
+
+        <!--
+            This directive ng-show, show's something when the evaluation passes
+            ng-hide, hide's something until the evaluation passes
+
+         -->
+        <div class="alert" ng-class="{ 'alert-warning': handle.length < characters, 'alert-danger': handle.length > characters}"
+             ng-show="handle.length !== characters">
+            <div ng-show="handle.length < characters">
+                You have less than 5 characters.
+            </div>
+
+            <div ng-show="handle.length > characters">
+                You have more than 5 characters.
+            </div>
+        </div>
+
         <h1>twitter.com/{{ lowercasehandle() }}</h1>
+
+        <h3>Rules</h3>
+        <ul>
+            <li ng-repeat="rule in rules">
+                {{ rule.rulename }}
+            </li>
+        </ul>
 
     </div>
 
@@ -62,6 +92,9 @@ ng-model
             </div>
         </div>
     </div>
+
+
+    <input type="button" value="Click Me" ng-click="alertClick()"/>
 
 </div>
 

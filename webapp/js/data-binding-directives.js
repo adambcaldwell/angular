@@ -42,6 +42,20 @@ dataBindingDirectives.controller('controller', ['$scope', '$filter', '$timeout',
             console.log("Scope changed!");
         });
     }, 5000);
+    
+    // Directives examples
+    $scope.characters = 5;
+
+    // Iterating over list
+    $scope.rules = [
+        { rulename: 'Must be 5 characters' },
+        { rulename: 'Must not be used elsewhere' },
+        { rulename: 'Must be cool' }
+    ];
+    
+    
+    // Directives (Part 2)
+    
 }]);
 
 var tb = document.getElementById('name');
