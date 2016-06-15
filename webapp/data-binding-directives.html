@@ -80,26 +80,29 @@ ng-model
             </li>
         </ul>
 
-    </div>
-
-    <br/>
-    <br/>
-    <h1>Dependency Injection</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <input type="text" id="name">
+        <br/>
+        <br/>
+        <h1>Dependency Injection</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="text" id="name">
+                </div>
             </div>
         </div>
+
+        <!-- Directives (Part 2) -->
+        <br/>
+        <br/>
+        <input type="button" value="Click Me" ng-click="alertClick()" >
+
+        <br />
+        <!--
+        This hides the element, which might display as "{{ name }}" until angular has had the time to do it's business
+        -->
+        <div ng-cloak>{{ name }}</div>
+
     </div>
-
-    <!-- Directives (Part 2) -->
-    <br/>
-    <br/>
-    <input type="button" value="Click Me" ng-click="alertClick()" >
-
-
-
 </div>
 
 </body>
