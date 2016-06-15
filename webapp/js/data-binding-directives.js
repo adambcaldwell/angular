@@ -35,27 +35,32 @@ dataBindingDirectives.controller('controller', ['$scope', '$filter', '$timeout',
         console.log("Scope changed!");
     }, 3000);
 
-    // this lets angular pick up on changes in regular old javascript (or you can user the angular $timeout )
+    // this lets angular pick up on changes in regular old javascript (or you can use the angular $timeout )
     setTimeout(function () {
         $scope.$apply(function () {
             $scope.handle = "newertwitterhandle";
             console.log("Scope changed!");
         });
     }, 5000);
-    
+
     // Directives examples
     $scope.characters = 5;
 
     // Iterating over list
     $scope.rules = [
-        { rulename: 'Must be 5 characters' },
-        { rulename: 'Must not be used elsewhere' },
-        { rulename: 'Must be cool' }
+        {rulename: 'Must be 5 characters'},
+        {rulename: 'Must not be used elsewhere'},
+        {rulename: 'Must be cool'}
     ];
-    
-    
+
+
     // Directives (Part 2)
-    
+    $scope.alertClick = function () {
+        alert("Clicked!");
+    };
+
+
+    console.log($scope);
 }]);
 
 var tb = document.getElementById('name');
