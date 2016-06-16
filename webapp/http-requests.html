@@ -10,6 +10,7 @@ Http Requests - Working with Spotify API
 
     <!-- load bootstrap and fontawesome via CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <style>
         html, body, input, select, textarea {
             font-size: 1.05em;
@@ -38,19 +39,35 @@ Http Requests - Working with Spotify API
 
 <div class="container">
     <div ng-controller="requests">
+        <div class="container panel-body">
+            <form class="form-group">
+                <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                    <div class="pull-left input-group col-lg-6 col-md-6 col-sm-8 col-xs-10">
+                        <input type="text" class="form-control" ng-model="searchText" placeholder="Search"/>
+                        <span class="input-group-btn">
+                           <button type="button" class="btn btn-default" ng-click="search();$('.spinner').removeClass('hidden');">Search</button>
+                        </span>
+                    </div>
+                    <div class="spinner col-lg-1 col-md-1 col-sm-1 col-xs-1" ng-show="loading">
+                        <i class="fa fa-spinner fa-spin fa-2x"></i>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br/>
+
         <table class="table table-responsive table-striped">
             <thead>
-            <th>
-            <td class="pull-left">#</td>
-            <td>Artist</td>
-            <td>Album</td>
-            <td>Song</td>
-            </th>
+            <th>#</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Song</th>
             </thead>
             <tbody>
             <tr ng-cloak ng-repeat="search in searchResult">
                 <td>{{ $index + 1 }}</td>
-                <td>{{ search.artists.name }}</td>
+                <td>{{ search.artists[0].name }}</td>
                 <td>{{ search.album.name }}</td>
                 <td>{{ search.name }}</td>
             </tr>
