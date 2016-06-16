@@ -9,7 +9,7 @@ var timeout = 15000;
 httpRequests.controller('requests', ['$scope', '$filter', '$timeout', '$http', '$log',
     function ($scope, $filter, $timeout, $http, $log) {
 
-    $scope.search = 'Fears';
+    $scope.search = 'Booty';
 
     // Spotify API URL: https://api.spotify.com
     var url = 'https://api.spotify.com/';
