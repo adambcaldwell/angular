@@ -18,7 +18,7 @@ httpRequests.controller('requests', ['$scope', '$filter', '$timeout', '$http', '
     $timeout(function() {
         $http.get( url + 'v1/search?q="' + $scope.search + '"&type=track')
             .success(function (result) {
-                $scope.searchResult = JSON.parse(JSON.stringify(result.tracks.items));
+                $scope.searchResult = result.tracks.items;
                 $log.info($scope.searchResult);
             })
             .error(function (data, status) {

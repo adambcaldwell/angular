@@ -41,19 +41,17 @@ Http Requests - Working with Spotify API
         <table class="table table-responsive table-striped">
             <thead>
             <th>
-            <td>#</td>
+            <td class="pull-left">#</td>
             <td>Artist</td>
             <td>Album</td>
             <td>Song</td>
             </th>
             </thead>
             <tbody>
-            <tr ng-cloak ng-repeat="search in searchResults">
+            <tr ng-cloak ng-repeat="search in searchResult">
                 <td>{{ $index + 1 }}</td>
-                <td></td>
-                <td></td>
-                <!--<td ng-repeat="artists in search.artists">{{ artists.name }}</td>-->
-                <!--<td ng-repeat="album in search.album">{{ album.name }}</td>-->
+                <td>{{ search.artists.name }}</td>
+                <td>{{ search.album.name }}</td>
                 <td>{{ search.name }}</td>
             </tr>
             </tbody>
