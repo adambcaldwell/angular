@@ -1,0 +1,156 @@
+<!--
+Single Page Applications
+-->
+<!DOCTYPE html>
+<html lang="en-us" ng-app="singlePageApp">
+<head>
+    <title>Learn and Understand AngularJS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <style>
+        html, body, input, select, textarea {
+            font-size: 1.05em;
+        }
+    </style>
+
+    <!-- load angular via CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="https://code.angularjs.org/1.5.6">AngularJS Single Page App</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="#/second">Second</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <!--<div ng-controller="single">-->
+        <!--<h1>{{ name }}</h1>-->
+    <!--</div>-->
+
+    <!--<div ng-controller="singleDouble">-->
+        <!--<h1>{{ name }}</h1>-->
+    <!--</div>-->
+
+    <div ng-view></div>
+
+</div>
+
+<!--<div class="container">-->
+    <!--<a href="#/bookmark/1">Go to Bookmark 1</a>-->
+    <!--<div>-->
+        <!--<p>Lorem ipsum dolor sit amet, est at ullum nullam voluptatum, vix ad omnium audiam prompta, pro ne singulis-->
+            <!--mnesarchum. Ei persecuti disputando quo. Tempor phaedrum eloquentiam duo ex, dicunt verterem duo ne, sed ea-->
+            <!--feugait iracundia. Id nec nonumy invenire, mucius admodum sensibus eos ut.-->
+
+            <!--Nam id quod agam aeque, cum feugait laboramus consetetur ex. Homero graece repudiandae ne vim. Eum mucius-->
+            <!--nominavi id, recteque disputando voluptatibus eu vix. Movet nullam at sed, ne sed partem putant. Mei amet-->
+            <!--putent te, sonet bonorum percipitur his in, dolor partem et eum.-->
+
+            <!--Usu ex putent quaerendum, cu omnesque quaerendum est. Dicat accusamus mei in, vis ad quem repudiandae. In-->
+            <!--officiis probatus duo. No cum legere adipiscing. No pri delectus gubergren theophrastus, no ludus sensibus-->
+            <!--mei.-->
+
+            <!--Iriure maiorum quo at. Vix no regione persequeris, quo no graecis rationibus dissentias, cum paulo equidem-->
+            <!--ne. Solum civibus per in, ut est amet vivendo blandit, sit movet perfecto ne. Vix errem contentiones at. Ea-->
+            <!--quodsi noluisse cum, cu eros legendos definitionem his. Ponderum accusata mnesarchum in mea. Id idque novum-->
+            <!--instructior pro, dicit conclusionemque te vel.-->
+        <!--</p>-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<p>Lorem ipsum dolor sit amet, est at ullum nullam voluptatum, vix ad omnium audiam prompta, pro ne singulis-->
+            <!--mnesarchum. Ei persecuti disputando quo. Tempor phaedrum eloquentiam duo ex, dicunt verterem duo ne, sed ea-->
+            <!--feugait iracundia. Id nec nonumy invenire, mucius admodum sensibus eos ut.-->
+
+            <!--Nam id quod agam aeque, cum feugait laboramus consetetur ex. Homero graece repudiandae ne vim. Eum mucius-->
+            <!--nominavi id, recteque disputando voluptatibus eu vix. Movet nullam at sed, ne sed partem putant. Mei amet-->
+            <!--putent te, sonet bonorum percipitur his in, dolor partem et eum.-->
+
+            <!--Usu ex putent quaerendum, cu omnesque quaerendum est. Dicat accusamus mei in, vis ad quem repudiandae. In-->
+            <!--officiis probatus duo. No cum legere adipiscing. No pri delectus gubergren theophrastus, no ludus sensibus-->
+            <!--mei.-->
+
+            <!--Iriure maiorum quo at. Vix no regione persequeris, quo no graecis rationibus dissentias, cum paulo equidem-->
+            <!--ne. Solum civibus per in, ut est amet vivendo blandit, sit movet perfecto ne. Vix errem contentiones at. Ea-->
+            <!--quodsi noluisse cum, cu eros legendos definitionem his. Ponderum accusata mnesarchum in mea. Id idque novum-->
+            <!--instructior pro, dicit conclusionemque te vel.-->
+        <!--</p>-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<p>Lorem ipsum dolor sit amet, est at ullum nullam voluptatum, vix ad omnium audiam prompta, pro ne singulis-->
+            <!--mnesarchum. Ei persecuti disputando quo. Tempor phaedrum eloquentiam duo ex, dicunt verterem duo ne, sed ea-->
+            <!--feugait iracundia. Id nec nonumy invenire, mucius admodum sensibus eos ut.-->
+
+            <!--Nam id quod agam aeque, cum feugait laboramus consetetur ex. Homero graece repudiandae ne vim. Eum mucius-->
+            <!--nominavi id, recteque disputando voluptatibus eu vix. Movet nullam at sed, ne sed partem putant. Mei amet-->
+            <!--putent te, sonet bonorum percipitur his in, dolor partem et eum.-->
+
+            <!--Usu ex putent quaerendum, cu omnesque quaerendum est. Dicat accusamus mei in, vis ad quem repudiandae. In-->
+            <!--officiis probatus duo. No cum legere adipiscing. No pri delectus gubergren theophrastus, no ludus sensibus-->
+            <!--mei.-->
+
+            <!--Iriure maiorum quo at. Vix no regione persequeris, quo no graecis rationibus dissentias, cum paulo equidem-->
+            <!--ne. Solum civibus per in, ut est amet vivendo blandit, sit movet perfecto ne. Vix errem contentiones at. Ea-->
+            <!--quodsi noluisse cum, cu eros legendos definitionem his. Ponderum accusata mnesarchum in mea. Id idque novum-->
+            <!--instructior pro, dicit conclusionemque te vel.-->
+        <!--</p>-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<a id="/bookmark/1">Bookmark 1</a>-->
+        <!--<p>Lorem ipsum dolor sit amet, est at ullum nullam voluptatum, vix ad omnium audiam prompta, pro ne singulis-->
+            <!--mnesarchum. Ei persecuti disputando quo. Tempor phaedrum eloquentiam duo ex, dicunt verterem duo ne, sed ea-->
+            <!--feugait iracundia. Id nec nonumy invenire, mucius admodum sensibus eos ut.-->
+
+            <!--Nam id quod agam aeque, cum feugait laboramus consetetur ex. Homero graece repudiandae ne vim. Eum mucius-->
+            <!--nominavi id, recteque disputando voluptatibus eu vix. Movet nullam at sed, ne sed partem putant. Mei amet-->
+            <!--putent te, sonet bonorum percipitur his in, dolor partem et eum.-->
+
+            <!--Usu ex putent quaerendum, cu omnesque quaerendum est. Dicat accusamus mei in, vis ad quem repudiandae. In-->
+            <!--officiis probatus duo. No cum legere adipiscing. No pri delectus gubergren theophrastus, no ludus sensibus-->
+            <!--mei.-->
+
+            <!--Iriure maiorum quo at. Vix no regione persequeris, quo no graecis rationibus dissentias, cum paulo equidem-->
+            <!--ne. Solum civibus per in, ut est amet vivendo blandit, sit movet perfecto ne. Vix errem contentiones at. Ea-->
+            <!--quodsi noluisse cum, cu eros legendos definitionem his. Ponderum accusata mnesarchum in mea. Id idque novum-->
+            <!--instructior pro, dicit conclusionemque te vel.-->
+
+    <!--</div>-->
+    <!--<div>-->
+        <!--<p>Lorem ipsum dolor sit amet, est at ullum nullam voluptatum, vix ad omnium audiam prompta, pro ne singulis-->
+            <!--mnesarchum. Ei persecuti disputando quo. Tempor phaedrum eloquentiam duo ex, dicunt verterem duo ne, sed ea-->
+            <!--feugait iracundia. Id nec nonumy invenire, mucius admodum sensibus eos ut.-->
+
+            <!--Nam id quod agam aeque, cum feugait laboramus consetetur ex. Homero graece repudiandae ne vim. Eum mucius-->
+            <!--nominavi id, recteque disputando voluptatibus eu vix. Movet nullam at sed, ne sed partem putant. Mei amet-->
+            <!--putent te, sonet bonorum percipitur his in, dolor partem et eum.-->
+
+            <!--Usu ex putent quaerendum, cu omnesque quaerendum est. Dicat accusamus mei in, vis ad quem repudiandae. In-->
+            <!--officiis probatus duo. No cum legere adipiscing. No pri delectus gubergren theophrastus, no ludus sensibus-->
+            <!--mei.-->
+
+            <!--Iriure maiorum quo at. Vix no regione persequeris, quo no graecis rationibus dissentias, cum paulo equidem-->
+            <!--ne. Solum civibus per in, ut est amet vivendo blandit, sit movet perfecto ne. Vix errem contentiones at. Ea-->
+            <!--quodsi noluisse cum, cu eros legendos definitionem his. Ponderum accusata mnesarchum in mea. Id idque novum-->
+            <!--instructior pro, dicit conclusionemque te vel.-->
+        <!--</p>-->
+    <!--</div>-->
+<!--</div>-->
+
+</body>
+<script src="js/single-page-apps.js"></script>
+</html>
