@@ -40,14 +40,32 @@ Http Requests - Working with Spotify API
 <div class="container">
     <div ng-controller="requests">
         <div class="container panel-body">
-            <form class="form-group">
-                <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <label for="searchBox">Search Type: </label>
+            <div class="checkbox">
+                <label>
+                    <input type="radio" ng-model="searchType" value="artist"> Artist
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="radio" ng-model="searchType" value="album"> Album
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="radio" ng-model="searchType" value="track"> Track
+                </label>
+            </div>
 
+            <form class="form-group">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="pull-left input-group col-lg-6 col-md-6 col-sm-8 col-xs-10">
-                        <input type="text" class="form-control" ng-model="searchText" placeholder="Search"/>
-                        <span class="input-group-btn">
-                           <button type="button" class="btn btn-default" ng-click="search();$('.spinner').removeClass('hidden');">Search</button>
-                        </span>
+                        <input type="text" class="form-control" id="searchBox" ng-model="searchText"
+                               placeholder="Search"/>
+                            <span class="input-group-btn">
+                               <button type="button" class="btn btn-default"
+                                       ng-click="search();">Search</button>
+                            </span>
                     </div>
                     <div class="spinner col-lg-1 col-md-1 col-sm-1 col-xs-1" ng-show="loading">
                         <i class="fa fa-spinner fa-spin fa-2x"></i>
@@ -67,9 +85,21 @@ Http Requests - Working with Spotify API
             <tbody>
             <tr ng-cloak ng-repeat="search in searchResult">
                 <td>{{ $index + 1 }}</td>
-                <td>{{ search.artists[0].name }}</td>
-                <td>{{ search.album.name }}</td>
-                <td>{{ search.name }}</td>
+                <td>
+                    <span ng-if="searchType === 'track'">{{ search.artists[0].name }}</span>
+                    <span ng-if="searchType === 'artist'">{{ search.name }}</span>
+                    <span ng-if="searchType === 'album'">N/A</span>
+                </td>
+                <td>
+                    <span ng-if="searchType === 'track'">{{ search.album.name }}</span>
+                    <span ng-if="searchType === 'artist'">N/A</span>
+                    <span ng-if="searchType === 'album'">{{ search.name }}</span>
+                </td>
+                <td>
+                    <span ng-if="searchType === 'track'">{{ search.name }}</span>
+                    <span ng-if="searchType === 'artist'">N/A</span>
+                    <span ng-if="searchType === 'album'">N/A</span>
+                </td>
             </tr>
             </tbody>
         </table>

@@ -10,6 +10,7 @@ httpRequests.controller('requests', ['$scope', '$filter', '$timeout', '$http', '
     function ($scope, $filter, $timeout, $http, $log) {
 
         $scope.searchText = '';
+        $scope.searchType = '';
         $scope.loading = false;
 
         // Spotify API URL: https://api.spotify.com
@@ -20,9 +21,24 @@ httpRequests.controller('requests', ['$scope', '$filter', '$timeout', '$http', '
             $scope.loading = true;
             $log.info("Loading: " + $scope.loading);
             $timeout(function () {
-                $http.get(url + 'v1/search?q="' + encodeURIComponent($scope.searchText) + '"&type=track')
+                $log.info("Search URL: " + url + 'v1/search?q="' + encodeURIComponent($scope.searchText) + '"&type=' + $scope.searchType);
+                $http.get(url + 'v1/search?q="' + encodeURIComponent($scope.searchText) + '"&type=' + $scope.searchType)
                     .success(function (result) {
-                        $scope.searchResult = result.tracks.items;
+                        switch($scope.searchType){
+                            case "artist":
+                                $scope.searchResult = result.artists.items;
+                                break;
+                            case "album":
+                                $scope.searchResult = result.albums.items;
+                                break;
+                            case "track":
+                                $scope.searchResult = result.tracks.items;
+                                break;
+                            default:
+                                $log.warn("Bad Search Type");
+                                break;
+                        }
+
                         $log.info($scope.searchResult);
                         $scope.loading = false;
                     })
