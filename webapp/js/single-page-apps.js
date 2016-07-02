@@ -12,9 +12,9 @@ singlePageApp.config(function($routeProvider){
             controller: 'single'
         })
         .when('/second', {
-        templateUrl: 'single-page-second.html',
-        controller: 'singleDouble'
-    })
+            templateUrl: 'single-page-second.html',
+            controller: 'singleDouble'
+        })
         .when('/second/:num', {
             templateUrl: 'single-page-second.html',
             controller: 'singleDouble'
