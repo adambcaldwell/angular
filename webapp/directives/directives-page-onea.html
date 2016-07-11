@@ -1,0 +1,11 @@
+
+<label>Search</label>
+<input type="text" value="Doe" />
+
+<h3>Search Results</h3>
+<div class="list-group">
+    <search-result person-name="{{ person.name }}" person-address="{{ person.address }}"></search-result>
+    <div search-result-2 person-object="person"></div>
+    <div class="search-result-3" person-object="people" formatted-address-function="formattedAddress(aperson)" ng-repeat="people in person"></div>
+     <!--directive: search-result -->
+</div>
