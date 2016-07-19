@@ -2,10 +2,14 @@
     <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
         <h4>Forecast by City</h4>
         <div class="form-group">
-            <div class="input-group">
-                <input type="text" class="form-control " ng-model="city"/>
-                <a href="#/forecast" class="input-group-addon btn-primary">Get Forecast</a>
-            </div>
+            <form ng-submit="submit()">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="city"/>
+                    <span class="input-group-btn">
+                        <input type="submit" class="btn btn-primary" value="Get Forecast"/>
+                    </span>
+                </div>
+            </form>
         </div>
     </div>
 </div>
